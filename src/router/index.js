@@ -75,6 +75,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  base: "/Vue-lesson-13/",
 });
 router.beforeEach((to) => {
   const isAuth = store.getters.getDataUserName
