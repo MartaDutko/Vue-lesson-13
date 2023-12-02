@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunktest"]=self["webpackChunktest"]||[]).push([[157],{7157:function(e,t,n){n.r(t),n.d(t,{default:function(){return i}});var u=n(3396);function r(e,t,n,r,c,s){const a=(0,u.up)("router-view");return(0,u.wg)(),(0,u.iD)("div",null,[(0,u.Wm)(a)])}var c={name:"SubjectSelect"},s=n(89);const a=(0,s.Z)(c,[["render",r]]);var i=a}}]);
+//# sourceMappingURL=157.a8cd3828.js.map
