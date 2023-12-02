@@ -20,7 +20,6 @@ export default {
     ...mapActions(["setDataUser"]),
     onLogin() {
       if (this.getDataUserName) {
-        window.userName = null;
         this.setDataUser({});
         this.$router.push({
           name: "home",

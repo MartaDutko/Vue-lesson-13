@@ -13,7 +13,7 @@
         </option>
       </select>
     </div>
-    <div><button @click="addToReport">Розпочати навчання</button></div>
+    <div><button :disabled=isDesabled @click="addToReport">Розпочати навчання</button></div>
   </div>
 </template>
 
@@ -39,10 +39,12 @@ export default {
     lessonsList() {
       return this.getListLessonsById(this.lessonId);
     },
+    isDesabled(){
+      return !(Object.keys(this.selectedTeachers).length === this.lessonId.length)
+    }
   },
   methods: {
     addToReport() {
-      if (Object.keys(this.selectedTeachers).length === this.lessonId.length) {
         const params = [];
         for (const lessonId in this.selectedTeachers) {
           const teacherId = this.selectedTeachers[lessonId];
@@ -54,7 +56,6 @@ export default {
             lessonParams: params,
           },
         });
-      }
     },
   },
 };

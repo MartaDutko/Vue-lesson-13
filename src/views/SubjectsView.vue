@@ -13,7 +13,7 @@
       </label>
     </div>
     <div>
-      <button @click="onSelectTeachers">Вибрати вчителів</button>
+      <button :disabled=isDisabled @click="onSelectTeachers">Вибрати вчителів</button>
     </div>
   </div>
 </template>
@@ -29,6 +29,9 @@ export default {
   },
   computed: {
     ...mapGetters("subject", ["getListLessons"]),
+    isDisabled(){
+      return !this.selectedSubject.length
+    }
   },
   methods: {
     onSelectTeachers() {

@@ -6,9 +6,9 @@
     </label>
     <label>
       Password
-      <input v-model="dataUser.pasword" type="password" minlength="5" />
+      <input v-model="dataUser.password" type="password" minlength="5" />
     </label>
-    <button @click="onLogin">Login</button>
+    <button :disabled=isDisabled @click="onLogin">Login</button>
   </div>
 </template>
 
@@ -21,11 +21,14 @@ export default {
       dataUser: {},
     };
   },
+  computed: {
+    isDisabled() {
+      return !(this.dataUser.userName && this.dataUser.password)
+    }
+  },
   methods: {
     ...mapActions(["setDataUser"]),
     onLogin() {
-      if (Object.keys(this.dataUser).length === 2) {
-        window.userName = this.dataUser.userName;
         this.setDataUser(this.dataUser);
         if (this.$route.query.redirect) {
           this.$router.push({
@@ -36,7 +39,6 @@ export default {
             name: "home",
           });
         }
-      }
     },
   },
 };
