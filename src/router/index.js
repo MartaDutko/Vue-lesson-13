@@ -14,9 +14,8 @@ const routes = [
     name: "subject",
     component: () => import('@/views/SubjectSelect.vue'),
     meta: { requiresAuth: false },
-    // якщо шлях subject передається без параметрів 
     beforeEnter: (to) => {
-      if (to.name === 'subject') return { name: 'not_found' }
+      if (to.name === 'subject' ) return { name: 'not_found' }
     },
     children: [
       {
